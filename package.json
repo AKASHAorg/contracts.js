@@ -17,7 +17,7 @@
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com:AkashaProject/contracts.js.git"
+    "url": "git+https://github.com/AkashaProject/contracts.js.git"
   },
   "dependencies": {
     "web3": "^0.17.0-alpha"
