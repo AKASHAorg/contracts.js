@@ -1,0 +1,36 @@
+{
+  "name": "@akashaproject/contracts.js",
+  "version": "1.0.0",
+  "description": "js compiled solidity contracts used by AKASHA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "keywords": [
+    "AKASHA",
+    "smart",
+    "contracts",
+    "solidity"
+  ],
+  "author": "Marius Darila <kenshy_ripper@yahoo.com>",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:AkashaProject/contracts.js.git"
+  },
+  "dependencies": {
+    "web3": "^0.17.0-alpha"
+  },
+  "homepage": "https://github.com/AkashaProject/contracts.js#readme",
+  "bugs": {
+    "url": "https://github.com/AkashaProject/contracts.js/issues"
+  },
+  "devDependencies": {
+    "standard-version": "^2.4.0"
+  },
+  "engines": {
+    "node": ">=6.1.0",
+    "npm": ">=3.8.6"
+  }
+}

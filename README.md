@@ -1,2 +1,2 @@
 # contracts.js
-compiled solidity contracts
+Compiled solidity contracts used by AKASHA
