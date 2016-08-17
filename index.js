@@ -1482,11 +1482,10 @@ dapple['contracts'] = (function builder () {
     }
 
     return {
-        class: constructor,
+        Class: constructor,
         environments: environments
     };
 })();
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = dapple['contracts'];
-}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = dapple['contracts'];
