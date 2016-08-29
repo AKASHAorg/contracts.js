@@ -1,4 +1,5 @@
 'use strict';
+const classes = require('./classes.json');
 
 // For geth
 if (typeof dapple === 'undefined') {
@@ -1489,3 +1490,4 @@ dapple['contracts'] = (function builder () {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = dapple['contracts'];
+exports.classes = classes;
