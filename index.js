@@ -1,7 +1,5 @@
 'use strict';
-const classes = require('./classes.json');
 
-// For geth
 if (typeof dapple === 'undefined') {
     var dapple = {};
 }
