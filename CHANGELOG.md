@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/AkashaProject/contracts.js/compare/v1.1.1...v1.1.2) (2016-09-02)
+
+
+### Bug Fixes
+
+* **import:** remove unused import ([86dd96b](https://github.com/AkashaProject/contracts.js/commit/86dd96b))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/AkashaProject/contracts.js/compare/v1.1.0...v1.1.1) (2016-08-31)
 
