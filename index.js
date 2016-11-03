@@ -3533,8 +3533,7 @@ dapple['AKASHA'] = (function builder () {
         this.objects = {};
         for (var i in env.objects) {
             var obj = env.objects[i];
-            if (!(obj['type'].split('[')[0] in this.classes)) continue;
-            this.objects[i] = this.classes[obj['type'].split('[')[0]].at(obj.value);
+            this.objects[i] = this.classes[obj['class']].at(obj.address);
         }
     }
 
