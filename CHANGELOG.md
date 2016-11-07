@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/AkashaProject/contracts.js/compare/v1.1.8...v1.2.0) (2016-11-07)
+
+
+### Features
+
+* **votes:** add extra getters ([1eced7b](https://github.com/AkashaProject/contracts.js/commit/1eced7b))
+
+
+
 <a name="1.1.8"></a>
 ## [1.1.8](https://github.com/AkashaProject/contracts.js/compare/v1.1.7...v1.1.8) (2016-11-03)
 
