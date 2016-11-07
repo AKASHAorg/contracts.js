@@ -3222,6 +3222,24 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'entryId',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'getScore',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'int256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': false,
                         'inputs': [
                             {
@@ -3424,6 +3442,32 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'name': 'setRegistry',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'entryId',
+                                'type': 'uint256'
+                            },
+                            {
+                                'name': 'voteId',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'getVoteOf',
+                        'outputs': [
+                            {
+                                'name': 'profile',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'score',
+                                'type': 'int8'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
