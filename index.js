@@ -52,7 +52,7 @@ dapple['AKASHA'] = (function builder () {
                     },
                     'feed': {
                         'class': 'Feed',
-                        'address': '0x818949e3f21eb2dfab99267581402351b7c5c527'
+                        'address': '0x0b29c1dffdf717e89c1e873ca3aa15e7dcc1d391'
                     },
                     'faucet': {
                         'class': 'Faucet',
@@ -72,7 +72,7 @@ dapple['AKASHA'] = (function builder () {
                     },
                     'votes': {
                         'class': 'Votes',
-                        'address': '0x1d83b31f2cb4cea5b900649824365dda1b81795b'
+                        'address': '0xdf3ba3598c9c5309b26588e6330fbe7a02317557'
                     }
                 },
                 'type': 'aeth'
@@ -1538,11 +1538,11 @@ dapple['AKASHA'] = (function builder () {
                         'constant': true,
                         'inputs': [
                             {
-                                'name': 'profile',
-                                'type': 'address'
+                                'name': 'id',
+                                'type': 'bytes32'
                             }
                         ],
-                        'name': 'subsCount',
+                        'name': 'subsLast',
                         'outputs': [
                             {
                                 'name': '',
@@ -1627,24 +1627,6 @@ dapple['AKASHA'] = (function builder () {
                         'constant': true,
                         'inputs': [
                             {
-                                'name': 'profile',
-                                'type': 'address'
-                            }
-                        ],
-                        'name': 'subsLast',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
                                 'name': 'id',
                                 'type': 'bytes32'
                             }
@@ -1694,6 +1676,28 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'name': 'getFollowingPrev',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'name': 'tag',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'subsPrev',
                         'outputs': [
                             {
                                 'name': '',
@@ -1809,24 +1813,6 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'profile',
-                                'type': 'address'
-                            }
-                        ],
-                        'name': 'subsFirst',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
                         'constant': false,
                         'inputs': [
                             {
@@ -1849,28 +1835,6 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'name': 'setRegistry',
                         'outputs': [],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'profile',
-                                'type': 'address'
-                            },
-                            {
-                                'name': 'tag',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'name': 'subsNext',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -1960,9 +1924,49 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': 'id',
                                 'type': 'bytes32'
+                            },
+                            {
+                                'name': 'tag',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'subsNext',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
                             }
                         ],
                         'name': 'getFollowingCount',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'subsCount',
                         'outputs': [
                             {
                                 'name': '',
@@ -1994,15 +1998,15 @@ dapple['AKASHA'] = (function builder () {
                         'constant': true,
                         'inputs': [
                             {
-                                'name': 'profile',
-                                'type': 'address'
+                                'name': 'id',
+                                'type': 'bytes32'
                             },
                             {
-                                'name': 'tag',
+                                'name': 'prev',
                                 'type': 'uint256'
                             }
                         ],
-                        'name': 'subsPrev',
+                        'name': 'getFollowersPrev',
                         'outputs': [
                             {
                                 'name': '',
@@ -2018,13 +2022,9 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': 'id',
                                 'type': 'bytes32'
-                            },
-                            {
-                                'name': 'prev',
-                                'type': 'uint256'
                             }
                         ],
-                        'name': 'getFollowersPrev',
+                        'name': 'subsFirst',
                         'outputs': [
                             {
                                 'name': '',
@@ -3496,6 +3496,28 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'address'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'entryId',
+                                'type': 'uint256'
+                            },
+                            {
+                                'name': 'profileAddress',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'getVoteOfProfile',
+                        'outputs': [
+                            {
+                                'name': 'weight',
+                                'type': 'int8'
                             }
                         ],
                         'payable': false,
