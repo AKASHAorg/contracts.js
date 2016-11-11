@@ -64,7 +64,7 @@ dapple['AKASHA'] = (function builder () {
                     },
                     'entries': {
                         'class': 'Entry',
-                        'address': '0xdad7305a309e67ffb1dd61f0ba46fb99c0ea88be'
+                        'address': '0x5d2b19074afa7299349d0ab353389881436a430a'
                     },
                     'comments': {
                         'class': 'Comments',
@@ -766,6 +766,42 @@ dapple['AKASHA'] = (function builder () {
             'Entry': {
                 'interface': [
                     {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'getProfileEntryLast',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'getProfileEntriesCount',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': false,
                         'inputs': [
                             {
@@ -791,6 +827,24 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'name': 'getTagEntryPrev',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'getProfileEntryFirst',
                         'outputs': [
                             {
                                 'name': '',
@@ -959,12 +1013,21 @@ dapple['AKASHA'] = (function builder () {
                     },
                     {
                         'constant': true,
-                        'inputs': [],
-                        'name': 'owner',
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'name': 'profileId',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'getProfileEntryNext',
                         'outputs': [
                             {
                                 'name': '',
-                                'type': 'address'
+                                'type': 'uint256'
                             }
                         ],
                         'payable': false,
@@ -972,17 +1035,12 @@ dapple['AKASHA'] = (function builder () {
                     },
                     {
                         'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'profile',
-                                'type': 'address'
-                            }
-                        ],
-                        'name': 'getProfileEntryFirst',
+                        'inputs': [],
+                        'name': 'owner',
                         'outputs': [
                             {
                                 'name': '',
-                                'type': 'uint256'
+                                'type': 'address'
                             }
                         ],
                         'payable': false,
@@ -1062,26 +1120,8 @@ dapple['AKASHA'] = (function builder () {
                         'constant': true,
                         'inputs': [
                             {
-                                'name': 'profile',
-                                'type': 'address'
-                            }
-                        ],
-                        'name': 'getProfileEntriesCount',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'profile',
-                                'type': 'address'
+                                'name': 'id',
+                                'type': 'bytes32'
                             },
                             {
                                 'name': 'profileId',
@@ -1125,46 +1165,6 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'name': 'getTagEntryFirst',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'profile',
-                                'type': 'address'
-                            },
-                            {
-                                'name': 'profileId',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'name': 'getProfileEntryNext',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'profile',
-                                'type': 'address'
-                            }
-                        ],
-                        'name': 'getProfileEntryLast',
                         'outputs': [
                             {
                                 'name': '',
