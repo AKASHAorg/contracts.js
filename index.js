@@ -52,7 +52,7 @@ dapple['AKASHA'] = (function builder () {
                     },
                     'feed': {
                         'class': 'Feed',
-                        'address': '0x0b29c1dffdf717e89c1e873ca3aa15e7dcc1d391'
+                        'address': '0x0811a3b9709d2a944cd69ce608681b0496733494'
                     },
                     'faucet': {
                         'class': 'Faucet',
@@ -1801,6 +1801,28 @@ dapple['AKASHA'] = (function builder () {
                     },
                     {
                         'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'name': 'following',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'isFollower',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
                         'inputs': [],
                         'name': 'owner',
                         'outputs': [
@@ -1839,14 +1861,18 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
-                        'constant': false,
+                        'constant': true,
                         'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            },
                             {
                                 'name': 'tag',
                                 'type': 'bytes32'
                             }
                         ],
-                        'name': 'unSubscribe',
+                        'name': 'isSubscribed',
                         'outputs': [
                             {
                                 'name': '',
@@ -1857,14 +1883,14 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
-                        'constant': true,
+                        'constant': false,
                         'inputs': [
                             {
-                                'name': 'id',
+                                'name': 'tag',
                                 'type': 'bytes32'
                             }
                         ],
-                        'name': 'isFollowing',
+                        'name': 'unSubscribe',
                         'outputs': [
                             {
                                 'name': '',
@@ -1962,15 +1988,19 @@ dapple['AKASHA'] = (function builder () {
                         'constant': true,
                         'inputs': [
                             {
+                                'name': 'follower',
+                                'type': 'bytes32'
+                            },
+                            {
                                 'name': 'id',
                                 'type': 'bytes32'
                             }
                         ],
-                        'name': 'subsCount',
+                        'name': 'isFollowing',
                         'outputs': [
                             {
                                 'name': '',
-                                'type': 'uint256'
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -1984,11 +2014,11 @@ dapple['AKASHA'] = (function builder () {
                                 'type': 'bytes32'
                             }
                         ],
-                        'name': 'isFollower',
+                        'name': 'subsCount',
                         'outputs': [
                             {
                                 'name': '',
-                                'type': 'bool'
+                                'type': 'uint256'
                             }
                         ],
                         'payable': false,
