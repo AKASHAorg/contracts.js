@@ -1,6 +1,6 @@
 {
   "name": "@akashaproject/contracts.js",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "js compiled solidity contracts used by AKASHA",
   "main": "index.js",
   "scripts": {
