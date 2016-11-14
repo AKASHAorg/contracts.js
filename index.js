@@ -52,7 +52,7 @@ dapple['AKASHA'] = (function builder () {
                     },
                     'feed': {
                         'class': 'Feed',
-                        'address': '0x31db7c662f6c5361a31c0876844ac1c6af542a8d'
+                        'address': '0x87feef988cca80aba188be0581b763fdb7748bb8'
                     },
                     'faucet': {
                         'class': 'Faucet',
