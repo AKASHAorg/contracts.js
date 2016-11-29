@@ -64,7 +64,7 @@ dapple['AKASHA'] = (function builder () {
                     },
                     'entries': {
                         'class': 'Entry',
-                        'address': '0x66805a5f762975a33cf8d1880642b64c825646dd'
+                        'address': '0x7b6db2bfadc6c981c091fbccfb960b39efc023c0'
                     },
                     'comments': {
                         'class': 'Comments',
@@ -72,7 +72,7 @@ dapple['AKASHA'] = (function builder () {
                     },
                     'votes': {
                         'class': 'Votes',
-                        'address': '0xdf3ba3598c9c5309b26588e6330fbe7a02317557'
+                        'address': '0x5ee9bce8bb1fa25debface924903d00946e57471'
                     }
                 },
                 'type': 'aeth'
@@ -1008,6 +1008,24 @@ dapple['AKASHA'] = (function builder () {
                         'inputs': [],
                         'name': 'destroy',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'entryId',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'getLastVoteBlock',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
