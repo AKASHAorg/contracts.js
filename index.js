@@ -64,15 +64,15 @@ dapple['AKASHA'] = (function builder () {
                     },
                     'entries': {
                         'class': 'Entry',
-                        'address': '0x7b6db2bfadc6c981c091fbccfb960b39efc023c0'
+                        'address': '0x3746fa6bea40b4fe18a3479d18ce6fa352e4c455'
                     },
                     'comments': {
                         'class': 'Comments',
-                        'address': '0x54b855461d4611362e8ef7a78e8560077e380a44'
+                        'address': '0x514251eb26298337199a71ad28d2c1bdfb281723'
                     },
                     'votes': {
                         'class': 'Votes',
-                        'address': '0x5ee9bce8bb1fa25debface924903d00946e57471'
+                        'address': '0x48e6b1e1891851288cc3711f6b231a912b4ab468'
                     }
                 },
                 'type': 'aeth'
