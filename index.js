@@ -40,39 +40,39 @@ dapple['AKASHA'] = (function builder () {
                 'objects': {
                     'registry': {
                         'class': 'RegistryController',
-                        'address': '0xd092e6baf52269121abf625f0a1a5693f65e46c7'
+                        'address': '0x9234104000d07e9f979d0658ab4c3af24d28c809'
                     },
                     'tags': {
                         'class': 'Tags',
-                        'address': '0x1170bed968f0e487932d84bfab38f51408404703'
+                        'address': '0x3f991679094bcc0c5e382aea2646bf7729e98bfb'
                     },
                     'registry_store': {
                         'class': 'RegistryStore',
-                        'address': '0x077c5983bfebec8fe75d7ef86311c2e9ff38609b'
+                        'address': '0xcc62d9d7b6080428b97178034cdbfc219cebd565'
                     },
                     'feed': {
                         'class': 'Feed',
-                        'address': '0x940bb75effd935ecdd45537e81c95cdbc72c444c'
+                        'address': '0x36e590f0e5ea86e69ad69e6f189927c7808fe4e2'
                     },
                     'faucet': {
                         'class': 'Faucet',
-                        'address': '0xa27c237bd671e37b54e72b3264855059d07d5e1a'
+                        'address': '0x762c63cc5102f448e541ad5c9859dce398a0b2c6'
                     },
                     'funds': {
                         'class': 'Funds',
-                        'address': '0x211ae2d39c4724dc3cc7df216d39bcbf83016895'
+                        'address': '0xfb8f8921ab57c6cd19f637a772cb0ae6374fdf1a'
                     },
                     'entries': {
                         'class': 'Entry',
-                        'address': '0x3746fa6bea40b4fe18a3479d18ce6fa352e4c455'
+                        'address': '0x8851b3dc6676f92532180cc0da14f86db248243a'
                     },
                     'comments': {
                         'class': 'Comments',
-                        'address': '0x514251eb26298337199a71ad28d2c1bdfb281723'
+                        'address': '0xe2adb9839395892725508d554409906be1e407c8'
                     },
                     'votes': {
                         'class': 'Votes',
-                        'address': '0x48e6b1e1891851288cc3711f6b231a912b4ab468'
+                        'address': '0xea05dbe12b6a5ef549d3e4a6b8fa2826bd0157a5'
                     }
                 },
                 'type': 'aeth'
@@ -364,6 +364,10 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': 'removed',
                                 'type': 'bool'
+                            },
+                            {
+                                'name': 'date',
+                                'type': 'uint256'
                             }
                         ],
                         'payable': false,
@@ -1553,6 +1557,19 @@ dapple['AKASHA'] = (function builder () {
             'Feed': {
                 'interface': [
                     {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'repository',
+                                'type': 'string'
+                            }
+                        ],
+                        'name': 'setRepository',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': true,
                         'inputs': [
                             {
@@ -1856,6 +1873,23 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'newVersion',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'name': 'releaseNotes',
+                                'type': 'string'
+                            }
+                        ],
+                        'name': 'setVersion',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'id',
                                 'type': 'bytes32'
                             }
@@ -1875,6 +1909,27 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'name': 'setRegistry',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'getAppState',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'name': '',
+                                'type': 'string'
+                            },
+                            {
+                                'name': '',
+                                'type': 'string'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -2136,6 +2191,45 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'name': 'Subscribe',
+                        'type': 'event'
+                    },
+                    {
+                        'anonymous': false,
+                        'inputs': [
+                            {
+                                'indexed': false,
+                                'name': 'newVersion',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'indexed': false,
+                                'name': 'releaseNotes',
+                                'type': 'string'
+                            },
+                            {
+                                'indexed': false,
+                                'name': 'blockNumber',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'UpdateVersion',
+                        'type': 'event'
+                    },
+                    {
+                        'anonymous': false,
+                        'inputs': [
+                            {
+                                'indexed': false,
+                                'name': 'repository',
+                                'type': 'string'
+                            },
+                            {
+                                'indexed': false,
+                                'name': 'blockNumber',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'UpdateRepository',
                         'type': 'event'
                     },
                     {
@@ -2441,6 +2535,7 @@ dapple['AKASHA'] = (function builder () {
                                 'type': 'address'
                             }
                         ],
+                        'payable': false,
                         'type': 'constructor'
                     },
                     {
