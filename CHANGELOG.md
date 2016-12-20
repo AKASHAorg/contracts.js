@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.12"></a>
+## [1.2.12](https://github.com/AkashaProject/contracts.js/compare/v1.2.11...v1.2.12) (2016-12-20)
+
+
+
 <a name="1.2.11"></a>
 ## [1.2.11](https://github.com/AkashaProject/contracts.js/compare/v1.2.10...v1.2.11) (2016-12-15)
 
