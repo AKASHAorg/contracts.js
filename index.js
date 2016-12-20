@@ -40,39 +40,43 @@ dapple['AKASHA'] = (function builder () {
                 'objects': {
                     'registry': {
                         'class': 'RegistryController',
-                        'address': '0x9234104000d07e9f979d0658ab4c3af24d28c809'
+                        'address': '0xc20a377b23e71138fa6c52c5b1e14be5ba79fdba'
                     },
                     'tags': {
                         'class': 'Tags',
-                        'address': '0x3f991679094bcc0c5e382aea2646bf7729e98bfb'
+                        'address': '0xd1ad662baa60cfc0a566ae50e93b0cd2c61a98a2'
                     },
                     'registry_store': {
                         'class': 'RegistryStore',
-                        'address': '0xcc62d9d7b6080428b97178034cdbfc219cebd565'
+                        'address': '0x155c6d4831e0af9e3dee5159fb4e2a79fc0ac2c1'
                     },
                     'feed': {
                         'class': 'Feed',
-                        'address': '0x36e590f0e5ea86e69ad69e6f189927c7808fe4e2'
+                        'address': '0xd3a161dbc0acc415b3c73af1ac8ccaa2a2c79f3d'
                     },
                     'faucet': {
                         'class': 'Faucet',
-                        'address': '0x762c63cc5102f448e541ad5c9859dce398a0b2c6'
+                        'address': '0x73dbff001616c8be349ee2fcbf1eeabe4836a22c'
                     },
                     'funds': {
                         'class': 'Funds',
-                        'address': '0xfb8f8921ab57c6cd19f637a772cb0ae6374fdf1a'
+                        'address': '0xa3e8254a83ac17f5999f0b2a33cf5671d61158f2'
                     },
                     'entries': {
                         'class': 'Entry',
-                        'address': '0x8851b3dc6676f92532180cc0da14f86db248243a'
+                        'address': '0xbcb5b0974a29d24a3ce0badf18e1350cb8c00361'
                     },
                     'comments': {
                         'class': 'Comments',
-                        'address': '0xe2adb9839395892725508d554409906be1e407c8'
+                        'address': '0x8361da6abaa79589e768c8014a15dd569a3710e0'
                     },
                     'votes': {
                         'class': 'Votes',
-                        'address': '0xea05dbe12b6a5ef549d3e4a6b8fa2826bd0157a5'
+                        'address': '0x23b0c296a9da5c1cbbd27edfe7e1282bb3f511ce'
+                    },
+                    'subs': {
+                        'class': 'Subs',
+                        'address': '0x0fd0eed8c14b040f0e8bd18334de1d8153b8a8bd'
                     }
                 },
                 'type': 'aeth'
@@ -115,6 +119,50 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'newAuthority',
                                 'type': 'address'
                             }
@@ -149,12 +197,55 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'newRegistry',
                                 'type': 'address'
                             }
                         ],
                         'name': 'setRegistry',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -216,6 +307,50 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'newAuthority',
                                 'type': 'address'
                             }
@@ -241,6 +376,49 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'address'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -332,6 +510,37 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': true,
                         'inputs': [
                             {
@@ -386,6 +595,19 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -450,6 +672,23 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'entryId',
                                 'type': 'uint256'
                             },
@@ -473,6 +712,32 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'name': 'setRegistry',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -841,6 +1106,37 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': true,
                         'inputs': [
                             {
@@ -939,6 +1235,19 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'name': 'claimDeposit',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -1056,6 +1365,19 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'blockNr',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'setEntryTTL',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': true,
                         'inputs': [],
                         'name': 'owner',
@@ -1065,6 +1387,23 @@ dapple['AKASHA'] = (function builder () {
                                 'type': 'address'
                             }
                         ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
                         'payable': false,
                         'type': 'function'
                     },
@@ -1103,6 +1442,32 @@ dapple['AKASHA'] = (function builder () {
                         'constant': true,
                         'inputs': [
                             {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
                                 'name': 'entryId',
                                 'type': 'uint256'
                             }
@@ -1120,6 +1485,10 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': 'ipfsHash',
                                 'type': 'bytes32[2]'
+                            },
+                            {
+                                'name': 'timeStamp',
+                                'type': 'uint256'
                             }
                         ],
                         'payable': false,
@@ -1222,6 +1591,45 @@ dapple['AKASHA'] = (function builder () {
                         'anonymous': false,
                         'inputs': [
                             {
+                                'indexed': false,
+                                'name': 'author',
+                                'type': 'address'
+                            },
+                            {
+                                'indexed': false,
+                                'name': 'entryId',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'Update',
+                        'type': 'event'
+                    },
+                    {
+                        'anonymous': false,
+                        'inputs': [
+                            {
+                                'indexed': true,
+                                'name': 'author',
+                                'type': 'address'
+                            },
+                            {
+                                'indexed': false,
+                                'name': 'entryId',
+                                'type': 'uint256'
+                            },
+                            {
+                                'indexed': false,
+                                'name': 'amount',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'Claim',
+                        'type': 'event'
+                    },
+                    {
+                        'anonymous': false,
+                        'inputs': [
+                            {
                                 'indexed': true,
                                 'name': 'owner',
                                 'type': 'address'
@@ -1276,6 +1684,50 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'newAuthority',
                                 'type': 'address'
                             }
@@ -1301,6 +1753,49 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'address'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -1392,6 +1887,37 @@ dapple['AKASHA'] = (function builder () {
                     },
                     {
                         'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
                         'inputs': [],
                         'name': 'claim',
                         'outputs': [],
@@ -1408,6 +1934,19 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'name': 'setMaxClaims',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -1467,12 +2006,55 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'newRegistry',
                                 'type': 'address'
                             }
                         ],
                         'name': 'setRegistry',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -1560,37 +2142,6 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
-                                'name': 'repository',
-                                'type': 'string'
-                            }
-                        ],
-                        'name': 'setRepository',
-                        'outputs': [],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'id',
-                                'type': 'bytes32'
-                            }
-                        ],
-                        'name': 'subsLast',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': false,
-                        'inputs': [
-                            {
                                 'name': 'newOwner',
                                 'type': 'address'
                             }
@@ -1644,14 +2195,27 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
-                                'name': 'tag',
-                                'type': 'bytes32'
+                                'name': 'what',
+                                'type': 'bool'
                             }
                         ],
-                        'name': 'subscribe',
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
                         'outputs': [
                             {
-                                'name': 'subscribed',
+                                'name': '',
                                 'type': 'bool'
                             }
                         ],
@@ -1671,6 +2235,19 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -1711,28 +2288,6 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'name': 'getFollowingPrev',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'id',
-                                'type': 'bytes32'
-                            },
-                            {
-                                'name': 'tag',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'name': 'subsPrev',
                         'outputs': [
                             {
                                 'name': '',
@@ -1873,6 +2428,27 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'repository',
+                                'type': 'string'
+                            },
+                            {
                                 'name': 'newVersion',
                                 'type': 'bytes32'
                             },
@@ -1937,33 +2513,19 @@ dapple['AKASHA'] = (function builder () {
                         'constant': true,
                         'inputs': [
                             {
-                                'name': 'id',
-                                'type': 'bytes32'
+                                'name': 'caller',
+                                'type': 'address'
                             },
                             {
-                                'name': 'tag',
-                                'type': 'bytes32'
-                            }
-                        ],
-                        'name': 'isSubscribed',
-                        'outputs': [
+                                'name': 'code',
+                                'type': 'address'
+                            },
                             {
-                                'name': '',
-                                'type': 'bool'
+                                'name': 'sig',
+                                'type': 'bytes4'
                             }
                         ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': false,
-                        'inputs': [
-                            {
-                                'name': 'tag',
-                                'type': 'bytes32'
-                            }
-                        ],
-                        'name': 'unSubscribe',
+                        'name': 'canCall',
                         'outputs': [
                             {
                                 'name': '',
@@ -1992,19 +2554,6 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
-                        'constant': false,
-                        'inputs': [
-                            {
-                                'name': 'tags',
-                                'type': 'address'
-                            }
-                        ],
-                        'name': 'setTagSource',
-                        'outputs': [],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
                         'constant': true,
                         'inputs': [],
                         'name': 'authority',
@@ -2012,28 +2561,6 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'address'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'id',
-                                'type': 'bytes32'
-                            },
-                            {
-                                'name': 'tag',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'name': 'subsNext',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
                             }
                         ],
                         'payable': false,
@@ -2085,24 +2612,6 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': 'id',
                                 'type': 'bytes32'
-                            }
-                        ],
-                        'name': 'subsCount',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'id',
-                                'type': 'bytes32'
                             },
                             {
                                 'name': 'prev',
@@ -2110,24 +2619,6 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'name': 'getFollowersPrev',
-                        'outputs': [
-                            {
-                                'name': '',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'payable': false,
-                        'type': 'function'
-                    },
-                    {
-                        'constant': true,
-                        'inputs': [
-                            {
-                                'name': 'id',
-                                'type': 'bytes32'
-                            }
-                        ],
-                        'name': 'subsFirst',
                         'outputs': [
                             {
                                 'name': '',
@@ -2180,56 +2671,12 @@ dapple['AKASHA'] = (function builder () {
                         'anonymous': false,
                         'inputs': [
                             {
-                                'indexed': true,
-                                'name': 'tag',
-                                'type': 'uint256'
-                            },
-                            {
-                                'indexed': true,
-                                'name': 'subscriber',
-                                'type': 'address'
-                            }
-                        ],
-                        'name': 'Subscribe',
-                        'type': 'event'
-                    },
-                    {
-                        'anonymous': false,
-                        'inputs': [
-                            {
                                 'indexed': false,
                                 'name': 'newVersion',
                                 'type': 'bytes32'
-                            },
-                            {
-                                'indexed': false,
-                                'name': 'releaseNotes',
-                                'type': 'string'
-                            },
-                            {
-                                'indexed': false,
-                                'name': 'blockNumber',
-                                'type': 'uint256'
                             }
                         ],
                         'name': 'UpdateVersion',
-                        'type': 'event'
-                    },
-                    {
-                        'anonymous': false,
-                        'inputs': [
-                            {
-                                'indexed': false,
-                                'name': 'repository',
-                                'type': 'string'
-                            },
-                            {
-                                'indexed': false,
-                                'name': 'blockNumber',
-                                'type': 'uint256'
-                            }
-                        ],
-                        'name': 'UpdateRepository',
                         'type': 'event'
                     },
                     {
@@ -2277,6 +2724,50 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'newAuthority',
                                 'type': 'address'
                             }
@@ -2311,12 +2802,55 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'newRegistry',
                                 'type': 'address'
                             }
                         ],
                         'name': 'setRegistry',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -2427,6 +2961,37 @@ dapple['AKASHA'] = (function builder () {
                     },
                     {
                         'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
                         'inputs': [],
                         'name': 'sendTip',
                         'outputs': [
@@ -2436,6 +3001,19 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'payable': true,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
                         'type': 'function'
                     },
                     {
@@ -2476,6 +3054,23 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'chunks',
                                 'type': 'bytes32[2]'
                             }
@@ -2498,6 +3093,32 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'bytes32'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -2537,12 +3158,6 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'payable': false,
                         'type': 'constructor'
-                    },
-                    {
-                        'anonymous': false,
-                        'inputs': [],
-                        'name': 'UpdateInfo',
-                        'type': 'event'
                     },
                     {
                         'anonymous': false,
@@ -2639,6 +3254,19 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': 'id',
                                 'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'emitUpdate',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
                             },
                             {
                                 'name': 'ipfs',
@@ -2650,6 +3278,50 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'address'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -2702,6 +3374,49 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'address'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -2809,6 +3524,23 @@ dapple['AKASHA'] = (function builder () {
                         'inputs': [
                             {
                                 'indexed': true,
+                                'name': 'id',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'indexed': false,
+                                'name': 'profile',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'UpdateProfile',
+                        'type': 'event'
+                    },
+                    {
+                        'anonymous': false,
+                        'inputs': [
+                            {
+                                'indexed': true,
                                 'name': 'owner',
                                 'type': 'address'
                             }
@@ -2893,6 +3625,37 @@ dapple['AKASHA'] = (function builder () {
                         'constant': false,
                         'inputs': [
                             {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
                                 'name': 'id',
                                 'type': 'bytes32'
                             },
@@ -2906,6 +3669,19 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'name': 'add',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
                         'outputs': [
                             {
                                 'name': '',
@@ -2966,6 +3742,49 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'address'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -3046,6 +3865,380 @@ dapple['AKASHA'] = (function builder () {
                     }
                 ]
             },
+            'Subs': {
+                'interface': [
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'subsLast',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'newOwner',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'setOwner',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'tag',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'subscribe',
+                        'outputs': [
+                            {
+                                'name': 'subscribed',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'name': 'tag',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'subsPrev',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'newAuthority',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'setAuthority',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [],
+                        'name': 'destroy',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'owner',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'address'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'newRegistry',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'setRegistry',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'name': 'tag',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'isSubscribed',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'tag',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'unSubscribe',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'tags',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'setTagSource',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'authority',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'address'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            },
+                            {
+                                'name': 'tag',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'name': 'subsNext',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'subsCount',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'id',
+                                'type': 'bytes32'
+                            }
+                        ],
+                        'name': 'subsFirst',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'anonymous': false,
+                        'inputs': [
+                            {
+                                'indexed': true,
+                                'name': 'tag',
+                                'type': 'uint256'
+                            },
+                            {
+                                'indexed': true,
+                                'name': 'subscriber',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'Subscribe',
+                        'type': 'event'
+                    },
+                    {
+                        'anonymous': false,
+                        'inputs': [
+                            {
+                                'indexed': true,
+                                'name': 'owner',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'DSOwnerUpdate',
+                        'type': 'event'
+                    },
+                    {
+                        'anonymous': false,
+                        'inputs': [
+                            {
+                                'indexed': true,
+                                'name': 'authority',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'DSAuthorityUpdate',
+                        'type': 'event'
+                    }
+                ]
+            },
             'Tags': {
                 'interface': [
                     {
@@ -3062,6 +4255,19 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': true,
                         'inputs': [
                             {
@@ -3070,6 +4276,24 @@ dapple['AKASHA'] = (function builder () {
                             }
                         ],
                         'name': 'exists',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
                         'outputs': [
                             {
                                 'name': '',
@@ -3115,6 +4339,19 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'name': 'remove',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -3189,6 +4426,23 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': true,
                         'inputs': [],
                         'name': 'getFirstTag',
@@ -3242,6 +4496,32 @@ dapple['AKASHA'] = (function builder () {
                         ],
                         'name': 'setRegistry',
                         'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
                         'payable': false,
                         'type': 'function'
                     },
@@ -3436,6 +4716,19 @@ dapple['AKASHA'] = (function builder () {
                         'type': 'function'
                     },
                     {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setEnabled',
+                        'outputs': [],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
                         'constant': true,
                         'inputs': [
                             {
@@ -3448,6 +4741,24 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            }
+                        ],
+                        'name': 'isWhitelisted',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -3484,6 +4795,19 @@ dapple['AKASHA'] = (function builder () {
                             {
                                 'name': '',
                                 'type': 'uint256'
+                            }
+                        ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [],
+                        'name': 'isEnabled',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
                             }
                         ],
                         'payable': false,
@@ -3533,6 +4857,23 @@ dapple['AKASHA'] = (function builder () {
                                 'type': 'address'
                             }
                         ],
+                        'payable': false,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': false,
+                        'inputs': [
+                            {
+                                'name': 'who',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'what',
+                                'type': 'bool'
+                            }
+                        ],
+                        'name': 'setWhitelisted',
+                        'outputs': [],
                         'payable': false,
                         'type': 'function'
                     },
@@ -3629,6 +4970,32 @@ dapple['AKASHA'] = (function builder () {
                         'name': 'downvote',
                         'outputs': [],
                         'payable': true,
+                        'type': 'function'
+                    },
+                    {
+                        'constant': true,
+                        'inputs': [
+                            {
+                                'name': 'caller',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'code',
+                                'type': 'address'
+                            },
+                            {
+                                'name': 'sig',
+                                'type': 'bytes4'
+                            }
+                        ],
+                        'name': 'canCall',
+                        'outputs': [
+                            {
+                                'name': '',
+                                'type': 'bool'
+                            }
+                        ],
+                        'payable': false,
                         'type': 'function'
                     },
                     {
