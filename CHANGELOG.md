@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/AkashaProject/contracts.js/compare/v1.2.12...v1.3.0) (2017-09-13)
+
+
+### Features
+
+* **contracts:** deploy to rinkeby ([3136a47](https://github.com/AkashaProject/contracts.js/commit/3136a47))
+
+
+
 <a name="1.2.12"></a>
 ## [1.2.12](https://github.com/AkashaProject/contracts.js/compare/v1.2.11...v1.2.12) (2016-12-20)
 
