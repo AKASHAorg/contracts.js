@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version"
   },
+  "directories": {
+    "abi": "./build/contracts"
+  },
   "keywords": [
     "AKASHA",
     "smart",
@@ -20,17 +23,18 @@
     "url": "git+https://github.com/AkashaProject/contracts.js.git"
   },
   "dependencies": {
-    "web3": "0.17.0-beta"
+    "truffle-contract": "3.0.0",
+    "web3": "0.20.1"
   },
   "homepage": "https://github.com/AkashaProject/contracts.js#readme",
   "bugs": {
     "url": "https://github.com/AkashaProject/contracts.js/issues"
   },
   "devDependencies": {
-    "standard-version": "4.0.0"
+    "standard-version": "4.2.0"
   },
   "engines": {
-    "node": ">=6.1.0",
-    "npm": ">=3.8.6"
+    "node": ">=7.6.0",
+    "npm": ">=5.0.0"
   }
 }
