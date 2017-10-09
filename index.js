@@ -36,7 +36,7 @@ module.exports = async function init(web3Provider) {
       const instance = contract(contracts[contractName]);
       instance.setProvider(web3Provider);
       if(contractName === 'AETH'){
-        return instance.at('0x34e5265de0fffb526cfc95a82f08a15c70626254').then(function (data) {
+        return instance.at('0xbfafbc160a3fdd6049c19bbb0b85cd0628d75c01').then(function (data) {
           Object.defineProperty(exported, contractName, exportValue(data));
         });
       }
