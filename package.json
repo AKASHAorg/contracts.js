@@ -23,7 +23,7 @@
     "url": "git+https://github.com/AkashaProject/contracts.js.git"
   },
   "dependencies": {
-    "truffle-contract": "3.0.0",
+    "truffle-contract": "3.0.1",
     "web3": "0.20.2"
   },
   "homepage": "https://github.com/AkashaProject/contracts.js#readme",
