@@ -48,11 +48,11 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.0;\n\n\ncontract AETHinterface {\n\n    function bonded(address _holder)\n    public\n    constant\n    returns (uint256 _bonded);\n\n\n    function consumeEssence(address _to, uint256 _amount)\n    external\n    returns (bool);\n\n}\n",
-  "sourcePath": "/home/kenshyx/projects/contracts.alpha/contracts/token/AETHinterface.sol",
+  "source": "",
+  "sourcePath": "contracts/token/AETHinterface.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/home/kenshyx/projects/contracts.alpha/contracts/token/AETHinterface.sol",
+      "absolutePath": "contracts/token/AETHinterface.sol",
       "exportedSymbols": {
         "AETHinterface": [
           5413

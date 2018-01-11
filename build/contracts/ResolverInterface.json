@@ -134,11 +134,11 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.0;\n\n\ncontract ResolverInterface {\n    function addr(bytes32 node) public constant returns (address ret);\n\n    function setAddr(bytes32 node, address newAddress) public;\n\n    function hash(bytes32 node) public view returns (uint8 fn, uint8 digestSize, bytes32 ipfsHash);\n\n    function setHash(bytes32 node, uint8 fn, uint8 digestSize, bytes32 ipfsHash) public;\n\n    function reverse(address owner) public view returns(bytes32);\n\n    function donationsEnabled(bytes32 _node) public view returns(bool);\n}",
-  "sourcePath": "/home/kenshyx/projects/contracts.alpha/contracts/token/ResolverInterface.sol",
+  "source": "",
+  "sourcePath": "contracts/token/ResolverInterface.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/home/kenshyx/projects/contracts.alpha/contracts/token/ResolverInterface.sol",
+      "absolutePath": "contracts/token/ResolverInterface.sol",
       "exportedSymbols": {
         "ResolverInterface": [
           6258
