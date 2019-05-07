@@ -1,6 +1,10 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.3.13](https://github.com/AkashaProject/contracts.js/compare/v1.3.12...v1.3.13) (2019-05-07)
+
+
 
 <a name="1.3.12"></a>
 ## [1.3.12](https://github.com/AkashaProject/contracts.js/compare/v1.3.11...v1.3.12) (2018-11-13)
